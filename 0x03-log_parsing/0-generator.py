@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-"""Generator Stats Module"""
-
-
 import random
 import sys
 from time import sleep
