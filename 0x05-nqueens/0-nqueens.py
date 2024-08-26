@@ -18,11 +18,12 @@ def validate_input() -> int:
         sys.exit(1)
     return n
 
+
 def n_queens() -> None:
     n = validate_input()
     col = set()
-    posDiag = set() #(r + c) is always constant
-    negDiag = set() #(r - c) is always constant
+    posDiag = set()  # (r + c) is always constant
+    negDiag = set()  # (r - c) is always constant
     sol = []
     result = []
 
