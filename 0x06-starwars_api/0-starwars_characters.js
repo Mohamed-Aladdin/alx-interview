@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
-const request = require('request');
+const request = require("request");
 
-const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
+const url = "https://swapi-api.alx-tools.com/api/films/" + process.argv[2];
 
 const fetchStarWars = (charList, index) => {
-  if (charList.legth === index) return;
+  if (charList.length === index) return;
   request(charList[index], (err, res, body) => {
     if (err) console.log(err);
     else {
