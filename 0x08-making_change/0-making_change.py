@@ -8,10 +8,13 @@ from typing import List
 def makeChange(coins: List[int], total: int) -> int:
     """return the fewest number of coins needed to meet the total
     """
-    MAX = float('inf')
-    dp = [0] + [MAX] * total
+    rs = [total+1] * (total+1)
+    rs[0] = 0
+    for i in xrange(1, total+1):
+        for c in coins:
+            if i >= c:
+                rs[i] = min(rs[i], rs[i-c] + 1)
 
-    for i in xrange(1, total + 1):
-        dp[i] = min([dp[i - c] if i - c >= 0 else MAX for c in coins]) + 1
-
-    return [dp[total], -1][dp[total] == MAX]
+    if rs[total] == total+1:
+        return -1
+    return rs[total]
