@@ -2,15 +2,12 @@
 """Island Perimeter Problem Module
 """
 
-from typing import List
-
-
-def island_perimeter(grid: List[List[int]]) -> int:
+def island_perimeter(grid):
     """Returns the perimeter of the island described in grid
     """
     checked = set()
 
-    def dfs(i: int, j: int) -> int:
+    def dfs(i, j):
         """Depth first search algorithm
         """
         if i >= len(grid) or j >= len(grid[0]) or i < 0 or j < 0 \
