@@ -14,9 +14,9 @@ def island_perimeter(grid: List[List[int]]) -> int:
         """Depth first search algorithm
         """
         if i >= len(grid) or j >= len(grid[0]) or i < 0 or j < 0 \
-            or grid[i][j] == 0:
+                or grid[i][j] == 0:
             return 1
-        if (i ,j) in checked:
+        if (i, j) in checked:
             return 0
         checked.add((i, j))
         perimeter = dfs(i, j + 1)
