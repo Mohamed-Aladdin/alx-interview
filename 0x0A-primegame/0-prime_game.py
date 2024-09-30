@@ -11,7 +11,7 @@ def isWinner(x, nums):
     results = {}
 
     for num in nums:
-        if f"num" in results:
+        if f"{num}" in results:
             ben, maria = results[f"{num}"]
         else:
             if num < 2:
