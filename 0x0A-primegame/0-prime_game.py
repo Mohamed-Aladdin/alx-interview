@@ -5,6 +5,8 @@
 def isWinner(x, nums):
     """Return the name of the player that won the most rounds
     """
+    if x < 1 or not nums:
+        return None
     maria, ben = 0, 0
 
     for num in nums:
