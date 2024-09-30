@@ -7,24 +7,30 @@ def isWinner(x, nums):
     """
     if x < 1 or not nums:
         return None
-    maria, ben = 0, 0
+    ben, maria = 0, 0
+    results = {}
 
     for num in nums:
-        if num < 2:
-            ben += 1
+        if num in results:
+            ben, maria = results[f"{num}"]
         else:
-            primes = 0
-
-            for i in range(2, num + 1):
-                if i == 2 or i == 3 or i == 5:
-                    primes += 1
-                    continue
-                if i % 2 != 0 and i % 3 != 0 and i % 5 != 0:
-                    primes += 1
-            if primes % 2 == 0:
+            if num < 2:
                 ben += 1
             else:
-                maria += 1
+                primes = 0
+
+                for i in range(2, num + 1):
+                    if i == 2 or i == 3 or i == 5:
+                        primes += 1
+                        continue
+                    if i % 2 != 0 and i % 3 != 0 and i % 5 != 0:
+                        primes += 1
+                if primes % 2 == 0:
+                    ben += 1
+                else:
+                    maria += 1
+                results[f"{num}"] = (ben, maria)
+
     if ben > maria:
         return "Ben"
     elif ben == maria:
