@@ -15,7 +15,7 @@ def isWinner(x, nums):
         else:
             primes = 0
 
-            for i in range(3, num + 1):
+            for i in range(2, num + 1):
                 if i == 2 or i == 3:
                     primes += 1
                     continue
