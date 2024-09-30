@@ -28,7 +28,3 @@ def isWinner(x, nums):
         return None
     else:
         return "Maria"
-
-
-if __name__ == "__main__":
-    print(isWinner(3, [4, 5, 1, 6]))
