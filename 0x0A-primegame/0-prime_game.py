@@ -4,7 +4,7 @@
 def isWinner(x, nums):
     """Return the name of the player that won the most rounds
     """
-    maria, ben = 0
+    maria, ben = 0, 0
 
     for num in nums:
         if num < 2:
@@ -30,5 +30,5 @@ def isWinner(x, nums):
         return "Maria"
 
 
-if __name__ == "__name__":
-    print(isWinner(3, [4, 5, 1]))
+if __name__ == "__main__":
+    print(isWinner(3, [4, 5, 1, 6]))
